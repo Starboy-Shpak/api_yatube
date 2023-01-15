@@ -1,70 +1,70 @@
-<h1 align="center">Привет, я <a href="https://t.me/starboy_shpak/" target="_blank">Вадим</a> 
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Бэкэнд-разработчик, электроэнергетик, студент Яндекса</h3>
+#  Социальная сеть "Yatube"
 
-# Содержание
-- [Автор](#автор)
-- [Используемые технологии](#используемые-технологии)
-- [Описание проекта](#описание-проекта)
-- [Как запустить проект](#как-запустить-проект)
+Социальная сеть. Микроблог.
 
+## Что проект умеет?
+Любой посетитель сайта может зарегистрироваться, создавать посты самостоятельно, публиковать их в отдельных группах по категориям. Реализованы добавление и удаление своих постов, комментирование постов других пользователей. Реализована подписка на других авторов с возможностью отслеживания новостей среди своих предпочтений.
+ 
+### Технологии
+- Python 3.7 
+- Django 2.2.19
+- MySQL
 
+### Как запустить проект:
+- Клонировать репозиторий и перейти в него в командной строке:
+```
+git clone git@github.com:Starboy-Shpak/api_yatube.git
+``` 
+- Создать и активировать виртуальное окружение:
+```
+python -m venv env
+source env/Scripts/activate
+``` 
+- Установить зависимости из файла requirements.txt:
+```
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+``` 
+- Перейти в каталог и выполнить миграции:
+```
+python manage.py migrate
+``` 
+- Запустить проект:
+```
+python manage.py runserver
+``` 
+### Примеры запросов к API:
 
-## Автор
-*Вадим Шпак* 
+Получить список всех постов (GET):
 
-## Используемые технологии
+```
+http://127.0.0.1:8000/api/v1/posts/
+```
 
-<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" />
-<img src="https://img.shields.io/badge/django%20rest-ff1709?style=for-the-badge&logo=django&logoColor=white" />
-<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white" />
-<img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white" />
-<img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
-<img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" />
+Получить определенный пост (GET):
 
-## Описание проекта
+```
+http://127.0.0.1:8000/api/v1/posts/1/
+```
 
-Добавление API для проекта Yatube.
+Получить комментарии определенного поста (GET):
 
-## Как запустить проект
-- #### Клонировать репозиторий и перейти в него в командной строке:
+```
+http://127.0.0.1:8000/api/v1/posts/1/comments/
+```
 
-  ```
-  git clone https://github.com/Starboy-Shpak/api_yatube.git
-  ```
+Получить список всех групп (GET):
 
-  ```
-  cd API_Yatube
-  ```
-- #### Cоздать и активировать виртуальное окружение:
+```
+http://127.0.0.1:8000/api/v1/groups/
+```
 
-  ```
-  python -m venv venv
-  ```
+Создать новый пост (POST):
 
-  ```
-  source venv/Scripts/activate
-  ```
+(Требуется аутентификация)
 
-- #### Обновить pip и установить зависимости из файла requirements.txt:
-
-  ```
-  python -m pip install --upgrade pip
-  ```
-
-  ```
-  pip install -r requirements.txt
-  ```
-
-- #### Выполнить миграции:
-
-  ```
-  python manage.py migrate
-  ```
-
-- #### Запустить проект:
-
-  ```
-  python manage.py runserver
-  ```
-  
+```
+http://127.0.0.1:8000/api/v1/posts/
+```
+---
+Автор: Вадим Шпак. Связаться со мной можно в [телеграм](https://t.me/starboy_shpak/)
